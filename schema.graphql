@@ -1,0 +1,74 @@
+input Answer {
+  questionId: String!
+  userAnswer: PossibleAnswer!
+}
+
+input CreateQuestionInput {
+  answer1: String!
+  answer2: String!
+  answer3: String!
+  correctAnswer: PossibleAnswer!
+  question: String!
+}
+
+input CreateQuizInput {
+  questionCount: Float!
+  quizName: String!
+}
+
+type JWT {
+  access_token: String!
+}
+
+type Mutation {
+  create(user: UserInput!): User!
+  createQuestion(createQuestionInput: CreateQuestionInput!): Question!
+  createQuiz(createQuizInput: CreateQuizInput!): Quiz!
+  removeQuestion(id: String!): Question!
+  removeQuiz(id: String!): Quiz!
+}
+
+enum PossibleAnswer {
+  answer1
+  answer2
+  answer3
+}
+
+type Query {
+  checkQuiz(answers: [Answer!]!, quizId: String!): String!
+  checkUsersAnswer(id: String!, usersAnswer: PossibleAnswer!): Boolean!
+  getQuestions: [Question!]!
+  getQuiz(id: String!): Quiz!
+  getQuizzes: [Quiz!]!
+  signIn(email: String!, password: String!): JWT!
+  user: User!
+  users: [User!]!
+}
+
+type Question {
+  answer1: String!
+  answer2: String!
+  answer3: String!
+  correctAnswer: PossibleAnswer!
+  id: String
+  question: String!
+}
+
+type Quiz {
+  id: String
+  questions: [Question!]!
+  quizName: String!
+}
+
+type User {
+  displayName: String!
+  email: String!
+  id: String!
+  password: String!
+}
+
+input UserInput {
+  displayName: String!
+  email: String!
+  password: String!
+}

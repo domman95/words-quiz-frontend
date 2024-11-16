@@ -1,0 +1,3 @@
+query CheckUserAnswer($checkUsersAnswerId: String!, $usersAnswer: PossibleAnswer!) {
+  checkUsersAnswer(id: $checkUsersAnswerId, usersAnswer: $usersAnswer)
+}

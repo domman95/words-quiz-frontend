@@ -1,0 +1,10 @@
+query GetQuestions {
+  getQuestions {
+    id
+    question
+    answer1
+    answer2
+    answer3
+    correctAnswer
+  }
+}

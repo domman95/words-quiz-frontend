@@ -1,0 +1,5 @@
+query SignIn($email: String!, $password: String!) {
+  signIn(email: $email, password: $password) {
+    access_token
+  }
+}

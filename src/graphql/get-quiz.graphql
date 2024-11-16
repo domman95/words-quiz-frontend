@@ -1,0 +1,13 @@
+query GetQuiz($getQuizId: String!) {
+  getQuiz(id: $getQuizId) {
+    id
+    quizName
+    questions {
+      id
+      answer1
+      answer2
+      answer3
+      question
+    }
+  }
+}

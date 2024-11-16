@@ -1,0 +1,9 @@
+query GetQuizzes {
+  getQuizzes {
+    id
+    quizName
+    questions {
+      id
+    }
+  }
+}

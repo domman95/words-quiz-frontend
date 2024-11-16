@@ -1,0 +1,3 @@
+query CheckQuiz($quizId: String!, $answers: [Answer!]!) {
+  checkQuiz(quizId: $quizId, answers: $answers)
+}
